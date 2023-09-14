@@ -63,4 +63,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: echo "- Test the artifact in the production environment"
-      - run: echo "# All tests and deployments have completed successfully!"
+      - run: echo "# All tests and deployments have completed successfully at " `date` "!"
+      
