@@ -21,7 +21,7 @@ jobs:
       - run: echo "- Build the artifact"
 
   test-artifact:
-    needs: development
+    needs: build
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -34,7 +34,7 @@ jobs:
       - run: echo "- Auto-deploy the artifact to the development environment"
         
   staging:
-    needs: test-artifact
+    needs: [development, test-artifact]
     runs-on: ubuntu-latest
     steps:
       - run: |
